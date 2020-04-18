@@ -10,7 +10,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def clean_slack(token: str, max_count: int = 0) -> None:
+def clean_slack(token: str, max_count: int = 30) -> None:
     slack = SlackCleaner(token)
     count = 0
     before = (datetime.now() - timedelta(days=7)).strftime('%Y%m%d')
@@ -28,7 +28,7 @@ def clean_slack(token: str, max_count: int = 0) -> None:
 
 def main() -> None:
     args = parse_args()
-    clean_slack(args.token)
+    clean_slack(args.slack_token)
 
 
 if __name__ == "__main__":
