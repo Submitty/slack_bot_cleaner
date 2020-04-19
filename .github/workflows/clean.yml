@@ -1,11 +1,14 @@
+# Action to clean the Submitty Slack for Travis-CI messages in #travis-ci, once
+# a day at midnight.
+
 name: Delete Travis-CI Slack Messages
 
 on:
-  push:
-    branches: [ master ]
+  #push:
+  #  branches: [ master ]
 
-  #schedule:
-  #  - cron: "0 */2 * * *"
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -25,4 +28,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run cleaner
-      run: python3 clean_slack.py ${{ secrets.SLACK_TOKEN }}
+      run: python3 clean_slack.py "${{ secrets.SLACK_TOKEN }}" "travis-ci"
