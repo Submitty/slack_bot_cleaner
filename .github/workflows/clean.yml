@@ -11,7 +11,7 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  build:
+  clean:
     runs-on: ubuntu-latest
 
     steps:
