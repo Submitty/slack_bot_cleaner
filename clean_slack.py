@@ -4,7 +4,6 @@ import time
 from typing import Tuple
 
 from slack_cleaner2 import SlackCleaner, match
-import slacker
 
 
 API_THROTTLE = 30
@@ -36,7 +35,7 @@ def delete_messages(
                 if count % API_THROTTLE == 0:
                     print(f"  {str(count).rjust(5, ' ')}")
                     time.sleep(60)
-    except slacker.Error:
+    except:
         completed = False
 
     return (completed, count)
