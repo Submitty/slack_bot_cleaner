@@ -3,12 +3,12 @@
 
 name: Delete Travis-CI Slack Messages
 
-on:
+on: [workflow_dispatch]
   #push:
   #  branches: [ master ]
 
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+  #  - cron: "0 0 * * *"
 
 jobs:
   clean:
