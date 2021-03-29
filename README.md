@@ -1,6 +1,8 @@
+__NOTE__: This repo is archived as we no longer use Travis-CI or have it post to Slack.
+
 # slack_bot_cleaner
 
-This repo holds some utility code to delete messages from bots from from a channel.
+This repo holds some utility code to delete messages from the slack bot from from a channel.
 
 ## Requirements
 
